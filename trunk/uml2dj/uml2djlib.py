@@ -14,7 +14,7 @@ TODO:
 
 @author: Goffer Looney (glooney)
 @doc: http://code.google.com/p/uml-to-django/
-$Id: uml2djlib.py 579 2009-10-01 12:04:50Z gnoel $
+$Id: uml2djlib.py 579 2009-10-01 12:04:50Z glooney $
 
 '''
 
