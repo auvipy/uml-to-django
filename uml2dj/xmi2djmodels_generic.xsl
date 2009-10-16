@@ -275,6 +275,7 @@ class <xsl:call-template name="getDjIdentifier"><xsl:with-param name="name" sele
 				<xsl:when test="@name='Char 128'" >CharField(max_length=128, null=False, default="", blank=<xsl:value-of select="$optional" />, </xsl:when>
 				<xsl:when test="@name='Char 255'" >CharField(max_length=255, null=False, default="", blank=<xsl:value-of select="$optional" />, </xsl:when>
 				<xsl:when test="@name='Char 1024'" >CharField(max_length=1024, null=False, default="", blank=<xsl:value-of select="$optional" />, </xsl:when>
+				<xsl:when test="@name='TEI'" >XMLField(null=False, default="", blank=<xsl:value-of select="$optional" />, </xsl:when>
 				<xsl:otherwise>
 					<!-- let other django compatible types go through, eg. Integer, Float -->
 					<!-- Need to detect them anyway because we need to set a default value eg. float => 0.0-->
