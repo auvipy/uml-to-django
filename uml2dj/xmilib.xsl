@@ -85,7 +85,11 @@ UML to Django
 	<xsl:variable name="parentClass" select="//UML:Generalization[UML:Generalization.child/UML:Class/@xmi.idref = $childid]/UML:Generalization.parent/UML:Class" />
 	<xsl:choose>
 		<!-- xsl:when test="$parentClass"><xsl:value-of select="xmidj:getDjIdentifier(key('classes', $parentClass/@xmi.idref)/@name)" /></xsl:when -->
-		<xsl:when test="$parentClass"><xsl:value-of select="key('classes', $parentClass/@xmi.idref)/@name" /></xsl:when>
+		<xsl:when test="$parentClass">
+			<xsl:call-template name="getDjIdentifier">
+				<xsl:with-param name="name"><xsl:value-of select="key('classes', $parentClass/@xmi.idref)/@name" /></xsl:with-param>
+			</xsl:call-template>
+		</xsl:when>
 		<xsl:otherwise>models.Model</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
