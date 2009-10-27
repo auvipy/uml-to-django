@@ -1,6 +1,6 @@
 #Explanation of the reasons why this project is currently dependent on ArgoUML diagram.
 
-ArgoUML's XMI file contains references to vernacular identifiers for the data types and other metadata information.
+ArgoUML's XMI file contains references to vernacular identifiers for the data types and other metadata information (e.g. documentation field for an attribute).
 
 For instance, in the following sample, a reference to a tag with id = 'http://argouml.org/profiles/uml14/default-uml14.xmi#-84-17--56-5-43645a83:11466542d86:-8000:000000000000087C' is used to declare an attribute as an Integer:
 
@@ -17,4 +17,4 @@ For instance, in the following sample, a reference to a tag with id = 'http://ar
                   </UML:StructuralFeature.type>
 }}}
 
-This application-dependent identifier makes UML to django incompatible with other UML authoring tools (Visio, etc.). One solution would be to detect which app generated the XMI and branch out the code for each one to recognise their own ids.
+This application-dependent identifiers makes UML to django incompatible with other UML authoring tools (Visio, etc.). One solution would be to detect which app generated the XMI and branch out the code for each one to recognise their own ids.
