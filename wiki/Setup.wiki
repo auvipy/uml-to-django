@@ -1,6 +1,6 @@
 #Configuration instructions
 
-==2.1 Initial setup==
+==1 Initial setup==
 
   # Prerequisites: 
     # you must have [http://www.python.org/ python], [http://www.djangoproject.com/ django] and [http://xmlsoft.org/python.html libxml2] module installed. For windows users, [http://xmlsoft.org/sources/win32/python/ libxml2 can be obtained from xmlsoft.org's website].
@@ -16,7 +16,7 @@
   # Now run the server: 'python manage.py runserver'.
   # Your new application should now be visible in the admin site.
 
-==2.2 Update the class diagram==
+==2 Update the class diagram==
 
   # modify your diagram in ArgoUML and export it as PRJ/APP.xmi
   # 'python uml2dj.py APP'
@@ -25,7 +25,7 @@
     # if you want to preserve your data, you can use other tools to (semi-)automatically update your db schema. ([http://code.google.com/p/django-evolution/ django-evolution], [http://south.aeracode.org/ South] or this [http://code.google.com/p/sql-dump-schema-diff/ database schema comparison utility] made by myself)
   # You'll probably need to restart your server ('python manage.py runserver').
 
-==2.3 Customise the model/admin files==
+==3 Customise the model/admin files==
 
 You'll notice that the tool generate several admin and models files:
   * *admin.py*: this file is auto-generated, is should not be edited.
