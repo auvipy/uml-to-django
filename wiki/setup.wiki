@@ -1,0 +1,35 @@
+#Configuration instructions
+
+==1 Initial setup==
+
+  # Prerequisites: 
+    # you must have [http://www.python.org/ python], [http://www.djangoproject.com/ django] and [http://xmlsoft.org/python.html libxml2] module installed. For windows users, [http://xmlsoft.org/sources/win32/python/ libxml2 can be obtained from xmlsoft.org's website].
+    # we assume that you have created a django project (let's call it PRJ) and an *empty* application (let's call it APP). 
+    # We also assume that settings.py is correctly configured with a reference to a database and the admin and APP application are enabled. You also have successfully run 'python manage.py syncdb' and 'python manage.py runserver'.
+  # Download the zip file into your PRJ folder (the one that contains manage.py).
+  # Download & install [http://argouml.tigris.org/ ArgoUML].
+  # Open PRJ/uml2dj.zargo, rename it APP.zargo and draw a single class diagram (and nothing else in it).
+  # In ArgoUML, export your diagram as a XMI file: PRJ/APP.xmi
+  # Go to the command line, in the PRJ folder and type: 'python uml2dj APP'. This command will generate the models.py and admin.py files in your APP folder.
+  # In the PRJ/APP folder, rename _admin_custom.py into admin_custom.py and _models.py into models.py. (you only need to do this once).
+  # Commit the changes to the database: 'python manage.py syncdb'.
+  # Now run the server: 'python manage.py runserver'.
+  # Your new application should now be visible in the admin site.
+
+==2 Update the class diagram==
+
+  # modify your diagram in ArgoUML and export it as PRJ/APP.xmi
+  # 'python uml2dj.py APP'
+  # Now your model has changed and the database needs to be resync'ed
+    # you can drop all the tables and resync the db from the app ('python uml2dj.py APP /d /s') OR
+    # if you want to preserve your data, you can use other tools to (semi-)automatically update your db schema. ([http://code.google.com/p/django-evolution/ django-evolution], [http://south.aeracode.org/ South] or this [http://code.google.com/p/sql-dump-schema-diff/ database schema comparison utility] made by myself)
+  # You'll probably need to restart your server ('python manage.py runserver').
+
+==3 Customise the model/admin files==
+
+You'll notice that the tool generate several admin and models files:
+  * *admin.py*: this file is auto-generated, is should not be edited.
+  * *admin_custom.py*: this file will contain your customisations of the admin.
+  * *admin_generic.py*: this file is auto-generated, is should not be edited.
+  * *models.py*: this file will contain your customisations of the models.
+  * *models_generic.py*: this file is auto-generated, is should not be edited.
