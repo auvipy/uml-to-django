@@ -11,7 +11,7 @@
   # Open PRJ/uml2dj.zargo, rename it APP.zargo and draw a single class diagram (and nothing else in it).
   # In ArgoUML, export your diagram as a XMI file: PRJ/APP.xmi
   # Go to the command line, in the PRJ folder and type: 'python uml2dj APP'. This command will generate the models.py and admin.py files in your APP folder.
-  # In the PRJ/APP folder, rename _admin_custom.py into admin_custom.py and _models.py into models.py. (you only need to do this once).
+  # In the PRJ/APP folder, rename {{{_}}}admin_custom.py into admin_custom.py and {{{_}}}models.py into models.py. (you only need to do this once).
   # Commit the changes to the database: 'python manage.py syncdb'.
   # Now run the server: 'python manage.py runserver'.
   # Your new application should now be visible in the admin site.
@@ -29,7 +29,7 @@
 
 You'll notice that the tool generate several admin and models files:
   * *admin.py*: this file is auto-generated, is should not be edited.
-  * *admin_custom.py*: this file will contain your customisations of the admin.
+  * *{{{_}}}admin_custom.py*: this file will contain your customisations of the admin.
   * *admin_generic.py*: this file is auto-generated, is should not be edited.
-  * *models.py*: this file will contain your customisations of the models.
+  * *{{{_}}}models.py*: this file will contain your customisations of the models.
   * *models_generic.py*: this file is auto-generated, is should not be edited.
